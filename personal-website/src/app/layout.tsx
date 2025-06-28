@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${jetBrainsMono.variable} ${poppins.variable} antialiased`}
+        className={`${jetBrainsMono.variable} ${poppins.variable} antialiased` }
       >
         {children}
       </body>
