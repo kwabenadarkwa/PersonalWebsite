@@ -2,14 +2,15 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 export default function Navigation() {
   const pathname = usePathname();
   const navItems = [
-    { name: 'Home', path: '/home' },
-    { name: 'Projects', path: '/projects' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'About', path: '/about' },
+    { name: 'Home', path: '/', image: '/home.svg' },
+    { name: 'Projects', path: '/projects', image: '/project.svg' },
+    { name: 'Blog', path: '/blog', image: '/blog.svg' },
+    { name: 'About', path: '/about', image: '/about.svg' },
   ];
 
   return (
@@ -19,10 +20,27 @@ export default function Navigation() {
           key={item.name}
           href={item.path}
           className={`cursor-pointer ${
-            pathname === item.path ? 'font-bold text-blue-500' : ''
+            pathname === item.path
+              ? 'w-auto px-1 border border-[#525252] rounded-full bg-[#262626]'
+              : ''
           }`}
         >
-          {item.name}
+          {pathname === item.path ? (
+            <>
+              <div className="flex flex-row items-center gap-1.5">
+                <Image
+                  src={item.image}
+                  width={15}
+                  height={15}
+                  alt="site logo"
+                  className="rounded-full"
+                />
+                {item.name}
+              </div>
+            </>
+          ) : (
+            item.name
+          )}
         </Link>
       ))}
     </nav>
