@@ -34,10 +34,12 @@ export default function RootLayout({
       <body
         className={`${jetBrainsMono.variable} ${poppins.variable} antialiased`}
       >
-        <div className="max-w-[70%] mx-auto">
+        <div className="min-h-screen flex flex-col max-w-[50%] mx-auto bg-[#171717]">
           <Header />
           <Navigation />
-          {children}
+          <main className="flex-1">
+            {children}
+          </main>
           <Footer />
         </div>
       </body>
