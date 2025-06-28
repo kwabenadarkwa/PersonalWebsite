@@ -1,5 +1,8 @@
 export default function Projects() {
   return (
-    <div className=''>This is the projects page</div>
+    <div className="p-4">
+      <h1 className="text-4xl font-bold">Projects</h1>
+      <p className="text-xl">This is the projects page</p>
+    </div>
   );
 }

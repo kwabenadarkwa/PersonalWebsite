@@ -1,6 +1,12 @@
 import type { Metadata } from 'next';
-import { JetBrains_Mono, /* Geist */ /* Geist_Mono */Poppins } from 'next/font/google';
+import {
+  JetBrains_Mono,
+  /* Geist */ /* Geist_Mono */ Poppins,
+} from 'next/font/google';
 import './globals.css';
+import Header from './_components/header';
+import Navigation from './_components/navigation';
+import Footer from './_components/footer';
 
 const poppins = Poppins({
   variable: '--font-poppins',
@@ -26,9 +32,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${jetBrainsMono.variable} ${poppins.variable} antialiased` }
+        className={`${jetBrainsMono.variable} ${poppins.variable} antialiased`}
       >
-        {children}
+        <div className="max-w-[70%] mx-auto">
+          <Header />
+          <Navigation />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );
