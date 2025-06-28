@@ -21,13 +21,13 @@ export default function Navigation() {
           href={item.path}
           className={`cursor-pointer ${
             pathname === item.path
-              ? 'w-auto px-1 border border-[#525252] rounded-full bg-[#262626]'
+              ? 'w-auto px-1.5 border border-[#000000] rounded-full bg-[#232D27]'
               : ''
           }`}
         >
           {pathname === item.path ? (
             <>
-              <div className="flex flex-row items-center gap-1.5">
+              <div className="flex flex-row items-center gap-1.5 ">
                 <Image
                   src={item.image}
                   width={15}
