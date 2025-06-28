@@ -14,7 +14,7 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="flex flex-row gap-4 p-4">
+    <nav className="flex flex-row gap-4 p-4 font-jetbrainsmono">
       {navItems.map((item) => (
         <Link
           key={item.name}

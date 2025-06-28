@@ -14,7 +14,7 @@ const poppins = Poppins({
   weight: ['400', '500', '600', '700'],
 });
 
-const jetBrainsMono = JetBrains_Mono({
+const jetbrainsmono = JetBrains_Mono({
   variable: '--font-jetbrains-mono',
   subsets: ['latin'],
 });
@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${jetBrainsMono.variable} ${poppins.variable} antialiased`}
+        className={jetbrainsmono.className}
       >
         <div className="min-h-screen flex flex-col max-w-[50%] mx-auto bg-[#171717]">
           <Header />
@@ -46,3 +46,4 @@ export default function RootLayout({
     </html>
   );
 }
+//`${jetBrainsMono.variable} ${poppins.variable} antialiased`
