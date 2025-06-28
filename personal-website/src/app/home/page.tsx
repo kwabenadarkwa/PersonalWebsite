@@ -1,13 +1,8 @@
-// import Image from "next/image";
-import Header from '@/app/_components/header';
-import Footer from '@/app/_components/footer';
-
 export default function Home() {
   return (
-    <div className="max-w-[70%] mx-auto min-h-screen flex flex-col">
-      <Header />
-      <main className='flex-1'></main>
-      <Footer />
+    <div className="p-4">
+      <h1 className="text-4xl font-bold">Home</h1>
+      <p className="text-xl">This is the home page</p>
     </div>
   );
 }
