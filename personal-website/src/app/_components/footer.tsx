@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="w-full text-[#A3A3A3] px-3 py-3 border-t border-[#262626] text-xs">
+    <footer className="w-full text-[#A3A3A3] px-3 py-3 border-t border-[#262626] text-xs font-main">
       
       <div className="w-full flex justify-between items-center">
         <span >© 2025 kwabena darkwa obeng-yeboah. All rights reserved.</span>

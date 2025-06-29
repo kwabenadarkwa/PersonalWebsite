@@ -1,6 +1,6 @@
 export default function Projects() {
   return (
-    <div className="p-4">
+    <div>
       <h1 className="text-4xl font-bold">Projects</h1>
       <p className="text-xl">This is the projects page</p>
     </div>

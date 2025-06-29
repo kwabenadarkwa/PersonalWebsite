@@ -31,19 +31,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={jetbrainsmono.className}
-      >
+      <body className={`${jetbrainsmono.variable} ${poppins.variable}`}>
         <div className="min-h-screen flex flex-col max-w-[50%] mx-auto bg-[#171717]">
           <Header />
           <Navigation />
-          <main className="flex-1">
-            {children}
-          </main>
+          <main className="flex-1">{children}</main>
           <Footer />
         </div>
       </body>
     </html>
   );
 }
-//`${jetBrainsMono.variable} ${poppins.variable} antialiased`
