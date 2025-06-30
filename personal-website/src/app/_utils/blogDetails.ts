@@ -15,7 +15,6 @@ export function retrieveBlogAllBlogs(): BlogDetails {
     const blogs: BlogPaneProps[] = [];
 
     for (const file of mdxFiles) {
-      console.log(file);
       try {
         const filePath = join(directoryPath, file);
         const fileContent = fs.readFileSync(filePath, 'utf-8');
