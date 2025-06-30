@@ -5,8 +5,22 @@ export default function Blog() {
   const { blogs, numberOfBlogs } = retrieveBlogAllBlogs();
   return (
     <div className="font-main flex flex-col gap-10">
-      <div>{numberOfBlogs} blog posts published</div>
+      <div>
+        <div>{numberOfBlogs} blog posts published</div>
 
+        <div className="text-[#b2beb5] pt-4">
+          I decided to make this place to harbor my thoughts and ideas. This is
+          my means of reasoning about thoughts that I have. And hopefully coming
+          to a consensus on things that I belive. This is heavily inspired by{' '}
+          <a
+            href="https://www.buildingasecondbrain.com/"
+            className="text-[#18A34B]"
+          >
+            Tiago Forte
+          </a>{' '}
+          . I decided to build this while reading his book.
+        </div>
+      </div>
       <div>
         {blogs.map((blog, index) => {
           return (
