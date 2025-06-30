@@ -3,7 +3,7 @@ import fs from 'fs';
 import matter from 'gray-matter';
 
 export function retrieveBlogAllBlogs(): BlogDetails {
-  const directoryPath = join(process.cwd(), '..', '..', 'content');
+  const directoryPath = join(process.cwd(), 'src', 'content');
 
   try {
     const blogFiles = fs.readdirSync(directoryPath);
@@ -20,6 +20,8 @@ export function retrieveBlogAllBlogs(): BlogDetails {
         const fileContent = fs.readFileSync(filePath, 'utf-8');
 
         const { data } = matter(fileContent);
+
+        if (data.published === false) continue;
 
         const blog: BlogPaneProps = {
           title: data.title || file.replace(/\.mdx?$/, ''),
