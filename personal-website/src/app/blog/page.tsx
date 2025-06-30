@@ -28,6 +28,7 @@ export default function Blog() {
               title={blog.title}
               tags={blog.tags}
               date={blog.date}
+              filename={blog.filename}
               key={index}
             />
           );

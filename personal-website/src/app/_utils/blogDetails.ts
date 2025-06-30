@@ -15,6 +15,7 @@ export function retrieveBlogAllBlogs(): BlogDetails {
     const blogs: BlogPaneProps[] = [];
 
     for (const file of mdxFiles) {
+      console.log(file);
       try {
         const filePath = join(directoryPath, file);
         const fileContent = fs.readFileSync(filePath, 'utf-8');
@@ -31,6 +32,7 @@ export function retrieveBlogAllBlogs(): BlogDetails {
               ? [data.tags]
               : [],
           date: data.date || new Date().toISOString().split('T')[0], //Dates should look like "2023-01-01"
+          filename: file.replace(/\.mdx?$/, ''),
         };
 
         blogs.push(blog);
@@ -60,6 +62,7 @@ export interface BlogPaneProps {
   title: string;
   tags: string[];
   date: string;
+  filename: string;
 }
 interface BlogDetails {
   blogs: BlogPaneProps[];
