@@ -8,9 +8,3 @@ export default async function Page({
 
   return <Post />;
 }
-
-// export function generateStaticParams() {
-//   return [{ slug: 'welcome' }, { slug: 'about' }];
-// }
-
-// export const dynamicParams = false;

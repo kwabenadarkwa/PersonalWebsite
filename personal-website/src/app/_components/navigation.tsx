@@ -13,19 +13,25 @@ export default function Navigation() {
     { name: 'About', path: '/about', image: '/about.svg' },
   ];
 
+  const isActive = (path: string) => {
+    if (path === '/') {
+      return pathname === '/';
+    }
+    return pathname?.startsWith(path);
+  };
+
   return (
     <nav className="flex flex-row gap-4 p-8 font-main">
       {navItems.map((item) => (
         <Link
           key={item.name}
           href={item.path}
-          className={`cursor-pointer ${
-            pathname === item.path
+          className={`cursor-pointer ${isActive(item.path)
               ? 'w-auto px-1.5 border border-[#000000] rounded-full bg-[#232D27]'
               : ''
-          }`}
+            }`}
         >
-          {pathname === item.path ? (
+          {isActive(item.path) ? (
             <>
               <div className="flex flex-row items-center gap-1.5 ">
                 <Image
