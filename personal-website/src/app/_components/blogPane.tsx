@@ -1,8 +1,4 @@
-interface BlogPaneProps {
-  title: string;
-  tags: string[];
-  date: string;
-}
+import { BlogPaneProps } from "@/app/_utils/blogDetails";
 export default function BlogPane(props: BlogPaneProps) {
   return (
     <div className="flex flex-row justify-between font-main text-sm">

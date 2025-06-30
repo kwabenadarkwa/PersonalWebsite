@@ -21,7 +21,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="flex flex-row gap-4 p-8 font-main">
+    <nav className="flex flex-row gap-4 pt-8 pb-20 font-main">
       {navItems.map((item) => (
         <Link
           key={item.name}
