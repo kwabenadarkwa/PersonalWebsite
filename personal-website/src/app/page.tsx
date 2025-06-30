@@ -27,9 +27,9 @@ export default function Home() {
         />
         <div className="pt-4 ">
           By ☝️I mean, I am a life long learner. I approach every problem with a
-          wide eyed curiousity and desire to learn and have fun!.
+          wide eyed curiousity and desire to learn and have fun.
           <br />
-          Enjoy my thoughts!
+          Enjoy my thoughts.
         </div>
       </div>
     </div>
