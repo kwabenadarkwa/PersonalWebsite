@@ -1,9 +1,9 @@
 /* src/app/globals.css */
 
-@import "tailwindcss";
+@import 'tailwindcss';
 
-@imoprt tailwindcss/preflight;
 @tailwind utilities;
+@plugin '@tailwindcss/typography';
 
 :root {
   --background: #070707;
