@@ -1,3 +1,24 @@
-export default function About() {
-  return <div className="">This is the blog page</div>;
+export default function Blog() {
+  return (
+    <div>
+      --dossis
+    <div className="font-main font-bold ">Kwabena Darkwa Obeng-Yeboah</div>
+    <span className="font- text-xs py-5 text-[#A3A3A3]">Super Creative</span>
+    <div className="py-5">I am KD the great software engineer, known for fixing every bug <br/> ever encountered. 
+      On a normal day you would find me either aggressively writing code  with the energy of a thousand buffalos <br/>
+      to watching anime like it's a second masters degree  but more importantly you would find me on a video call with 
+      my girlfirend <br/> 20/24 every day of the week .
+    </div>
+
+    <div className="text-xs text-[#A3A3A3]">To stop asking the why of things is to loose your connection <br/>
+    with the world around you 
+    -Kwabena created this </div>
+
+    <div className="py-5">That is the principle i live by.</div>
+
+    </div>
+    
+
+
+  ) ;
 }
