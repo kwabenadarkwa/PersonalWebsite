@@ -7,7 +7,7 @@ const nextConfig = {
 
 const withMDX = createMDX({
   options: {
-    remarkPlugins: [],
+    remarkPlugins: [['remark-frontmatter'], ['remark-mdx-frontmatter']],
     rehypePlugins: [['rehype-katex', { strict: true, throwOnError: true }]],
   },
 });
