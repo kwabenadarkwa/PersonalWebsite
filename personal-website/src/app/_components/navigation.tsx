@@ -27,7 +27,7 @@ export default function Navigation() {
           key={item.name}
           href={item.path}
           className={`cursor-pointer ${isActive(item.path)
-              ? 'w-auto px-1.5 border border-[#525252] rounded-full bg-[#404040]'
+              ? 'w-auto px-1.5 border border-[#525252] rounded-md bg-[#404040]'
               : ''
             }`}
         >
