@@ -1,7 +1,6 @@
 export default function Blog() {
   return (
     <div className="font-main">
-      --dossis
       <div className=" font-bold ">Kwabena Darkwa Obeng-Yeboah</div>
       <span className="font- text-xs py-5 text-[#A3A3A3]">Super Creative</span>
       <div className="py-5">
