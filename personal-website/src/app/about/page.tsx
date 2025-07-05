@@ -6,7 +6,7 @@ export default function Blog() {
     <span className="font- text-xs py-5 text-[#A3A3A3]">Super Creative</span>
     <div className="py-5">I am KD the great software engineer, known for fixing every bug <br/> ever encountered. 
       On a normal day you would find me either aggressively writing code  with the energy of a thousand buffalos <br/>
-      to watching anime like it's a second masters degree  but more importantly you would find me on a video call with 
+      to watching anime like it&apos;s my day job.
       my girlfirend <br/> 20/24 every day of the week .
     </div>
 
