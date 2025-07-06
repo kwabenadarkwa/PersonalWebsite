@@ -17,6 +17,10 @@
   --font-mono: var(--font-geist-mono);
   --font-secondary: var(--font-poppins);
   --font-main: var(--font-jetbrains-mono);
+  --font-tertiary: var(--font-cookie);
+  --font-lugrasimo: var(--font-lugrasimo);
+
+
 }
 
 @media (prefers-color-scheme: dark) {

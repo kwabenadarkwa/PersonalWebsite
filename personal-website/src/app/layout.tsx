@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import {
   JetBrains_Mono,
-  /* Geist */ /* Geist_Mono */ Poppins,
+ Poppins,Cookie, Lugrasimo
 } from 'next/font/google';
 import './globals.css';
 import Header from './_components/header';
@@ -12,6 +12,18 @@ const poppins = Poppins({
   variable: '--font-poppins',
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
+});
+
+const lugrasimo = Lugrasimo({
+  variable: '--font-lugrasimo',
+  subsets: ['latin'],
+  weight: ['400'],
+});
+
+const cookie = Cookie({
+  variable: '--font-cookie',
+  subsets: ['latin'],
+  weight: ['400'],
 });
 
 const jetbrainsmono = JetBrains_Mono({
@@ -31,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${jetbrainsmono.variable} ${poppins.variable}`}>
+      <body className={`${jetbrainsmono.variable} ${poppins.variable} ${cookie.variable} ${lugrasimo}`}>
         <div className="min-h-screen flex flex-col max-w-[50%] mx-auto bg-[#171717]">
           <Header />
           <Navigation />
