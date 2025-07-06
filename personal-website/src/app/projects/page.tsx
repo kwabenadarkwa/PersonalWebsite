@@ -1,5 +1,6 @@
 import Project from "../_components/projects";
 import ExtractProjectJsonData from "../_utils/extractProjectJsonData";
+import ProjectSection from "../_components/projectSection";
 
 // export async function  getStaticProps() {
 //   const projectData = await ProjectsData()
@@ -19,7 +20,13 @@ export default async function Projects( ) {
   return (
     <div>
       <div className="font-main font-bold ">
-        <span>Startups</span>
+        <ProjectSection
+        name="Startups"
+        image="/rocket.svg"
+        
+        
+        />
+
         {ProjectData.startups.length > 0? (
          ProjectData && ProjectData.startups.map( (item: { name: string; description: string; image:string; link: string; displaylink: string; }, index:number ) => (
           <div key={index}> 
@@ -39,7 +46,14 @@ export default async function Projects( ) {
         )}
       </div>
       
-      <div className="font-main font-bold py-4">Projects
+      <div className="font-main font-bold py-4">
+
+      <ProjectSection
+        name="Apps"
+        image="/coding.svg"
+        
+        
+        />
       {ProjectData.apps.length > 0? (
           ProjectData.apps.map( (item: { name: string; description: string;image:string; link: string; displaylink: string; }, index:number ) => (
           <div key={index}>
@@ -59,7 +73,13 @@ export default async function Projects( ) {
         )}
       </div>
       
-      <div className="font-main font-bold py-4">Packages
+      <div className="font-main font-bold py-4">
+      <ProjectSection
+        name="Packages"
+        image="/packages.svg"
+        
+        
+        />
         {ProjectData.packages.length > 0? (
           ProjectData.packages.map( (item: { name: string; description: string; link: string; image: string; displaylink: string; }, index:number) => (
            <div key={index}>  <Project

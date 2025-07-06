@@ -15,7 +15,7 @@ export default function Project({name, description, link, image, displaylink}: P
 ){
     return(
         <div className="font-main ">
-            <div  className="flex flex-row py-1 gap-3 text-xs  py-4 items-center">
+            <div  className="flex flex-row py-1 gap-3 text-xs  items-center">
             <div className=" g">{name} </div>
             <a 
             href={link}
