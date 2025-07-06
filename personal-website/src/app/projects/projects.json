@@ -10,6 +10,13 @@
             "image":"/github.svg",
             "link":"www.github/kwabenadarkwa",
             "displaylink":"www.shor"
+        },
+        {
+            "name":"Golang",
+            "description":"Built an app with golang",
+            "image":"/github.svg",
+            "link":"www.github/kwabenadarkwa",
+            "displaylink":"www.shor"
         }
 
     ],

@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-interface ProjectProps{
+export interface ProjectProps{
     name: string,
     description: string,
     link: string

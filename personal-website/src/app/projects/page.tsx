@@ -1,29 +1,82 @@
 import Project from "../_components/projects";
+import ExtractProjectJsonData from "../_utils/extractProjectJsonData";
 
-export default function Projects() {
+// export async function  getStaticProps() {
+//   const projectData = await ProjectsData()
+  
+//   return{
+//     props: { projectData}
+//   }
+  
+// }
+
+
+export default async function Projects( ) {
+  const ProjectData = await ExtractProjectJsonData()
+
+
+
   return (
     <div>
       <div className="font-main font-bold ">
         <span>Startups</span>
+        {ProjectData.startups.length > 0? (
+         ProjectData && ProjectData.startups.map( (item: { name: string; description: string; image:string; link: string; displaylink: string; }, index:number ) => (
+          <div key={index}> 
+           <Project
+            name={item.name}
+            description= {item.description}
+            link={item.link}
+            image={item.image}
+            displaylink={item.displaylink}
+            />
+            </div>
 
-        
+          ))
 
-
+        ) : (
+          <div className="text-sm"> My startups are still loading</div>
+        )}
       </div>
+      
       <div className="font-main font-bold py-4">Projects
-        <Project
-        name="Github"
-        description="I built a github clone and it allowed me to replicate the features of github"
-        link="www.github/kwabenadarkwa"
-        image="/github.svg"
-        displaylink="app" />
+      {ProjectData.apps.length > 0? (
+          ProjectData.apps.map( (item: { name: string; description: string;image:string; link: string; displaylink: string; }, index:number ) => (
+          <div key={index}>
+            <Project
+            name={item.name}
+            description={item.description}
+            link={item.link}
+            image={item.image}
+            displaylink={item.displaylink}
+            />
+            </div>
 
+          ))
+
+        ) : (
+          <span> My apps are still loading</span>
+        )}
       </div>
-      <div className="font-main font-bold py-4">Packages</div>
+      
+      <div className="font-main font-bold py-4">Packages
+        {ProjectData.packages.length > 0? (
+          ProjectData.packages.map( (item: { name: string; description: string; link: string; image: string; displaylink: string; }, index:number) => (
+           <div key={index}>  <Project
+            name={item.name}
+            description={item.description}
+            link={item.link}
+            image={item.image}
+            displaylink={item.displaylink}
+            />
+            </div>
 
+          ))
 
-
-      <p className="text-xl">This is the projects page</p>
+        ) : (
+          <span> My packages are still loading</span>
+        )}
+      </div>
     </div>
   );
 }
