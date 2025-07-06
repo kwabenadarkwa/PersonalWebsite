@@ -1,8 +1,5 @@
 import type { Metadata } from 'next';
-import {
-  JetBrains_Mono,
- Poppins,Cookie, Lugrasimo
-} from 'next/font/google';
+import { JetBrains_Mono, Poppins, Cookie, Lugrasimo } from 'next/font/google';
 import './globals.css';
 import Header from './_components/header';
 import Navigation from './_components/navigation';
@@ -43,7 +40,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${jetbrainsmono.variable} ${poppins.variable} ${cookie.variable} ${lugrasimo}`}>
+      <body
+        className={`${jetbrainsmono.variable} ${poppins.variable} ${cookie.variable} ${lugrasimo.variable}`}
+      >
         <div className="min-h-screen flex flex-col max-w-[50%] mx-auto bg-[#171717]">
           <Header />
           <Navigation />
