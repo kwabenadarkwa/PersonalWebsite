@@ -1,7 +1,7 @@
 import Image from "next/image";
 export default function Header() {
   return (
-    <header className="w-full flex items-center justify-between px-4 py-4 bg-[#171717] font-poppins">
+    <header className="relative z-50 w-full flex items-center justify-between px-4 py-4 bg-[#171717]/90 backdrop-blur-sm border-b border-[#525252]/20 font-poppins">
       {/* Left: Logo and Site Title pinned to the left edge */}
       <div className="flex items-center ">
         <Image
