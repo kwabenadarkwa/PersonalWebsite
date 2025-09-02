@@ -1,45 +1,10 @@
 import Image from 'next/image';
+import AnimatedBackground from './_components/animatedBackground';
 
 export default function Home() {
     return (
         <>
-            {/* Animated Background */}
-            <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#171717] via-[#262626] to-[#171717]" />
-
-                {/* Floating particles/dots */}
-                <div
-                    className="absolute top-1/4 left-1/4 w-2 h-2 bg-[#22C55E] rounded-full opacity-60 animate-ping"
-                    style={{ animationDelay: '0s' }}
-                />
-                <div
-                    className="absolute top-1/3 right-1/4 w-1.5 h-1.5 bg-[#facc15] rounded-full opacity-40 animate-ping"
-                    style={{ animationDelay: '1s' }}
-                />
-                <div
-                    className="absolute bottom-1/3 left-1/3 w-1 h-1 bg-[#22C55E] rounded-full opacity-50 animate-ping"
-                    style={{ animationDelay: '2s' }}
-                />
-                <div
-                    className="absolute top-3/4 right-1/3 w-2 h-2 bg-[#facc15] rounded-full opacity-30 animate-ping"
-                    style={{ animationDelay: '1.5s' }}
-                />
-                <div
-                    className="absolute bottom-1/4 left-1/2 w-1.5 h-1.5 bg-[#22C55E] rounded-full opacity-45 animate-ping"
-                    style={{ animationDelay: '0.5s' }}
-                />
-
-                {/* Subtle grid pattern */}
-                <div
-                    className="absolute inset-0 opacity-5"
-                    style={{
-                        backgroundImage:
-                            'radial-gradient(circle, #22C55E 1px, transparent 1px)',
-                        backgroundSize: '50px 50px',
-                    }}
-                />
-            </div>
-
+            <AnimatedBackground />
             {/* Main Content */}
             <div className="relative min-h-screen flex items-center justify-center p-4 z-10">
                 <div className="font-main max-w-2xl mx-auto text-center space-y-8">
