@@ -1,31 +1,16 @@
 'use client';
 import Giscus from '@giscus/react';
-import { useEffect, useState } from 'react';
-import Loading from '../../_components/loading';
-export default function Page({
-    params,
-}: {
-    params: Promise<{ slug: string }>;
-}) {
-    const [content, setContent] = useState<{
-        Post: React.ComponentType;
-        frontmatter: { title: string; date: string; tags: string[] };
-    } | null>(null);
+interface BlogPostProps {
+  Post: React.ComponentType;
+  frontmatter: {
+    title: string;
+    date: string;
+    tags: string[];
+  };
+}
 
-    useEffect(() => {
-        params.then(async (resolvedParams) => {
-            const { slug } = resolvedParams;
-            const { default: Post, frontmatter } = await import(
-                `@/content/${slug}.mdx`
-            );
-            setContent({ Post, frontmatter });
-        });
-    }, [params]);
-
-    if (!content) return <Loading />;
-
-    const { Post, frontmatter } = content;
-    return (
+export default function BlogPost({ Post, frontmatter }: BlogPostProps) {
+  return (
         <div className="font-main">
             <div className="flex flex-col gap-2 text-left pb-10">
                 <div className="text-2xl font-bold">{frontmatter.title}</div>
@@ -54,19 +39,20 @@ export default function Page({
 
             <Giscus
                 id="comments"
-                repo="kwabenadarkwa/PersonalWebsite"
-                repoId="1010168553"
+                repo="giscus/giscus-component"
+                repoId="MDEwOlJlcG9zaXRvcnkzOTEzMTMwMjA="
                 category="Announcements"
                 categoryId="DIC_kwDOF1L2fM4B-hVS"
                 mapping="specific"
-                term="Welcome to my Website"
+                term="Welcome to @giscus/react component!"
                 reactionsEnabled="1"
                 emitMetadata="0"
                 inputPosition="top"
-                theme="dark"
+                theme="light"
                 lang="en"
                 loading="lazy"
             />
         </div>
     );
+
 }
