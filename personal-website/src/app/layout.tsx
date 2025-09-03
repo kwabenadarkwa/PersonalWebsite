@@ -43,7 +43,7 @@ export default function RootLayout({
       <body
         className={`${jetbrainsmono.variable} ${poppins.variable} ${cookie.variable} ${lugrasimo.variable}`}
       >
-        <div className="relative min-h-screen flex flex-col max-w-[50%] mx-auto bg-[#171717] z-20">
+        <div className="relative min-h-screen flex flex-col max-w-[800px] mx-auto bg-[#171717] z-20">
           <Header />
           <Navigation />
           <main className="flex-1 relative z-10">{children}</main>
