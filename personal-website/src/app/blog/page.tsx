@@ -16,7 +16,7 @@ export default function Blog() {
             href="https://www.buildingasecondbrain.com/"
             className="text-[#18A34B]"
           >
-            Tiago Forte
+            Buidling a Second Brain ~ Tiago Forte
           </a>{' '}
           . I decided to build this while reading his book.
         </div>
