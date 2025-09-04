@@ -5,7 +5,7 @@ export default function Header() {
       {/* Left: Logo and Site Title pinned to the left edge */}
       <div className="flex items-center ">
         <Image
-          src="/vercel.svg"
+          src="/logo.svg"
           width={40}
           height={40}
           alt="site logo"

@@ -12,7 +12,7 @@ export default async function ExtractProjectJsonData(): Promise<ProjectJsonData>
 }
 
 interface ProjectJsonData {
-  startups: [ProjectProps];
+  openSource: [ProjectProps];
   apps: [ProjectProps];
   packages: [ProjectProps];
 }

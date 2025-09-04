@@ -8,11 +8,11 @@ export default async function Projects() {
   return (
     <div>
       <div className="font-main font-bold ">
-        <ProjectSection name="Startups" image="/rocket.svg" />
+        <ProjectSection name="Open Source" image="/rocket.svg" />
 
-        {ProjectData.startups.length > 0 ? (
+        {ProjectData.openSource.length > 0 ? (
           ProjectData &&
-          ProjectData.startups.map(
+          ProjectData.openSource.map(
             (
               item: {
                 name: string;

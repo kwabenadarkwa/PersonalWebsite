@@ -1,28 +1,5 @@
 {
-  "startups": [],
-  "apps": [
-    {
-      "name": "Golang",
-      "description": "Built an app with golang",
-      "image": "/github.svg",
-      "link": "www.github/kwabenadarkwa",
-      "displaylink": "makr"
-    },
-    {
-      "name": "Golang",
-      "description": "Built an app with golang",
-      "image": "/github.svg",
-      "link": "www.github/kwabenadarkwa",
-      "displaylink": "gl"
-    }
-  ],
-  "packages": [
-    {
-      "name": "My package manager",
-      "description": "A package manager for my projects",
-      "image": "/github.svg",
-      "link": "www.github/kwabenadarkwa",
-      "displaylink": "app"
-    }
-  ]
+  "openSource": [],
+  "apps": [],
+  "packages": []
 }

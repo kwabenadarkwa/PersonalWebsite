@@ -6,7 +6,7 @@ export default function Footer() {
             <div className="w-full flex justify-between items-center">
                 <span>© 2025 KDOY</span>
                 <Image
-                    src="/vercel.svg"
+                    src="/logo.svg"
                     width={18}
                     height={18}
                     alt="site logo"
