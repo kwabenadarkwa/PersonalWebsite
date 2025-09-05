@@ -1,5 +1,55 @@
 {
-  "openSource": [],
-  "apps": [],
-  "packages": []
+  "openSource": [
+    {
+      "name": "event-pipeline",
+      "description": "A package for building pipelines in Python using pointy-lang which is a DSL for writing pipelines in an easy to read manner. Very useful for ML pipelines and any type of pipeline where gathering data is important.",
+      "image": "/github.svg",
+      "link": "https://github.com/nshaibu/event_pipeline",
+      "displaylink": "event-pipeline"
+    }
+  ],
+  "apps": [
+    {
+      "name": "Type Terminal",
+      "description": "A typing test application built for the terminal. It allows users to test their typing speed and accuracy. It also is accessible through ssh. Built with Golang and Charm",
+      "image": "/github.svg",
+      "link": "https://github.com/kwabenadarkwa/TypeTerminal",
+      "displaylink": "Type Terminal"
+    },
+    {
+      "name": "Dino Explore",
+      "description": "A terminal based version of the Google Dino game that shows up when there's no internet connection. Built with C#",
+      "image": "/github.svg",
+      "link": "https://github.com/kwabenadarkwa/DinoExplore/",
+      "displaylink": "Dino Explore"
+    },
+    {
+      "name": "Copter",
+      "description": "A cross-platform project management desktop application for managing projects among teams in a company. Built with Avalonia UI(C#) and Supabase.",
+      "image": "/github.svg",
+      "link": "https://github.com/kwabenadarkwa/Copter",
+      "displaylink": "Copter"
+    },
+    {
+      "name": "BoaMe",
+      "description": "Uber but for cleaners. An android application that allows students to book a personal cleaner for some section of their flats.Built with Java and Firebase",
+      "image": "/github.svg",
+      "link": "https://github.com/kwabenadarkwa/BoaMe",
+      "displaylink": "boame"
+    },
+    {
+      "name": "Smart Tag",
+      "description": "Large size classroom manageement system application using NFC technology. Includes a personalized impersonation detection algorithm that predicts students likely to miss classes based on weights. Built with React Native and Node Js",
+      "image": "/github.svg",
+      "link": "git@github.com:Capstone-Projections/smart_tag_frontend.git",
+      "displaylink": "Smart Tag"
+    },
+    {
+      "name": "Eirhub",
+      "description": "A doctor patient communication application that allows doctors to manage their patients by prescribing medicine to them and booking online video call meetings.",
+      "image": "/github.svg",
+      "link": "https://github.com/kwabenadarkwa/Eirhub",
+      "displaylink": "Eirhub"
+    }
+  ]
 }

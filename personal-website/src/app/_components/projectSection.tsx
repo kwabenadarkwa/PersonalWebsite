@@ -7,7 +7,7 @@ interface SectionProps{
 
 export default function ProjectSection({name, image}: SectionProps){
     return(
-    <div className="flex flex-row items-center gap-1.5 text-[#A3A3A3] py-5">
+    <div className="flex flex-row items-center gap-1.5 text-[#facc15] py-5">
        
         <Image
         src={image}
