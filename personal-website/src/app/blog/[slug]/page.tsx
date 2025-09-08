@@ -31,7 +31,7 @@ export default function Page({
                 <div className="text-2xl font-bold">{frontmatter.title}</div>
 
                 <div className="flex flex-row gap-2 text-sm">
-                    <div className="text-[#A3A3A3] bg-[#262626] border border-[#000000] rounded-full">
+                    <div className="text-[#A3A3A3] bg-[#262626] px-2 rounded-full">
                         {frontmatter.date}
                     </div>
                     <div className="flex flex-row gap-2">
@@ -39,7 +39,7 @@ export default function Page({
                             return (
                                 <div
                                     key={index}
-                                    className="text-[#F8903C] bg-[#262626] border border-[#000000] rounded-full pr-1 text-sm"
+                                    className="text-[#F8903C] bg-[#262626] rounded-full px-2 text-sm"
                                 >
                                     {tag}
                                 </div>
@@ -63,7 +63,7 @@ export default function Page({
                 reactionsEnabled="1"
                 emitMetadata="0"
                 inputPosition="top"
-                theme="dark"
+                theme="noborder_dark"
                 lang="en"
                 loading="lazy"
             />

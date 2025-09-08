@@ -17,7 +17,7 @@ export default function BlogPane({
               return (
                 <div
                   key={index}
-                  className="text-[#F8903C] bg-[#262626] border border-[#000000] rounded-full pr-1 text-sm"
+                  className="text-[#F8903C] bg-[#262626] rounded-full px-2 text-sm"
                 >
                   {tag}
                 </div>
