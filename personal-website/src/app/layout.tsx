@@ -29,8 +29,8 @@ const jetbrainsmono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Personal Website',
-  description: 'Personal website for me and my girlfriend',
+  title: 'doybeans🇬🇭',
+  description: 'Personal website to share my thoughts and projects',
 };
 
 export default function RootLayout({

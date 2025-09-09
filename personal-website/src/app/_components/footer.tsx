@@ -18,7 +18,7 @@ export default function Footer() {
         <span>
           Version <span className="text-[#22c55e]"> 2025.</span>0.01{' '}
         </span>
-        <div>Next.js</div>
+        <div>Built with Next.js and 💙</div>
         {/* 
   <div>
                     Source code:{' '}
