@@ -11,9 +11,9 @@ export default function Blog() {
       </div>
       <div className="text-xs text-[#A3A3A3]">
         To stop asking the why of things is to loose your connection <br />
-        with the world around you -Kwabena created this{' '}
+        with the world around you ~ a very smart man(me lol){' '}
       </div>
-      <div className="py-5">That is the principle i live by.</div>
+      <div className="py-5">That is the principle I live by.</div>
     </div>
   );
 }
