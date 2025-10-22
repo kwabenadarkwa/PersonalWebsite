@@ -1,0 +1,101 @@
+---
+title: "Agean (Masters Thesis): Part 1"
+tags: ["nexus", "ai","machine-learning"]
+date: "Wednesday, 22nd October 2025"
+published: true
+---
+
+I started my Masters in Software Engineering in 2024. It was a really fun experience. I learnt how to program systems in a better way than I knew. I learnt how to think through building systems. Particularly how to build systems progressively instead of trying to do everything at once. I found a new love for programming that I didn't know I could find. Programming with neovim(which I've been doing for a year now) and making my dev environment exactly my own has contributed very much to this. 
+
+### Background 
+For my masters theses I decided to tackle a problem in computer science education. Going into it I didn't have any particular problem that I was looking to tackle and I kept an open mind. 
+The way my school did it, they released a list of the lecturers and the topics that they were interested in supervising. As a student you were supposed hop on the website, find a project you were interested in, connnect to the particular lecturer and then talk with them about what they envision the project would be about before starting.
+I wanted to do something that I couldn't think of how to implement in the moment. For most of the projects that I saw I could. I also had one lecturer in mind to work with because over my years of education he is the one that stood out the most in terms of communicating knowledge and I really wanted to work with him. I was very excited when the the project he had put out intersected with my want for a challenge. This is what he had posted on the website.
+
+<div className="flex justify-center">
+<img src="/blog/masters_thesis_ad.png" alt="image of project theses"  />
+</div>
+
+My thoughts were; "this would be fun and challenging and I have no idea how to build it but gosh would it be fun when I finally figure out how to".
+
+### Skeleton of solving this problem.
+As you do in research you find out whether other people have tried to do something like what you want to do first. After seeing what they've done,  and what improvements they suggest you try and build something that either replicates their work to see if you can reach the same conclusions, or improves on what they've done based on the recommendations they've provided. 
+I actually didn't think anyone would have worked on something similar but as they say, there is nothing new under the sun and I found quite alot actually. In order not to make this too long(and as I'm writing this I'm sure it'll be) I wouldn't go too deep into what the literature discusses but in short there is a skeleton of how to solve problems of this kind. 
+
+First you need to understand what makes a video a video. In essence a video is a combination of frames. What frames are is basically images.These group of images that have been combined together with some sound is what makes s video[^1]. This realisation kind of makes the problem a bit easier to solve if you think about it. 
+But first I'd have to introduce what OCR is. OCR sounds like it's a disease(or something you've find in the hospital), but it's not. It means Optical Character Recognition. Basically this is one method for computers to see the text inside of images. I believe the tesseract engine was the first verion of this and you can check it out [here](https://www.linuxjournal.com/article/9676). 
+Now that you know that something like this exists it should be easy to solve this problem shouldn't it? In essence you have the frames from the video. You can then extract the text in the images and that's the code. Right? Right? Wrong! There are alot of things you need to consider and here are the few I could think about with the time I had.
+
+*Things to consider*
+- In tutorial videos you could have text that is both code and not code, how do you tell the difference between both? 
+- If you're able to tell the difference between what contains code and what doesn't how do you get the portion of the frame that contains the code? It could contain artifacts that are not necessarily code but file trees and things of the sort present in IDE's  
+- How do you tell which file you're currently making a change in? 
+- How do you know which line in a file change is being made on? 
+- How do you recreate the entire code content of a video after getting fragments of the code from isolated frames in the video? 
+
+Over the course of the blogs I'm going to write I'm going to explain how I built this and evaluated it's potency. This one would be the starting point. I was going to just make this one blog but I realise it'll be too long and I don't want to make this as long as my actual theses lol.
+
+
+### Going a bit deeper
+In *Things to consider*, I mentioned some things that have to be considered on top of just the regular OCR and figuring out that a video is made of frames that are combined together. In considering all of those things this is the final pipeline I came up with to solving this problem(note that I had 2 months to build this whiles working a difficult part time job in a warehouse 3 days out of 7 which means that I would have done some things differently if I had more time).
+
+Side note: As I write this I realise that this might actually be way longer than I expected(again yes :-D). There might have to be 3 parts maybe. It could actually be 4.
+
+
+Anyway, it took a lot of iterations to get to the point where the pipeline for solving this problem ended up being and discussing that would be interesting but too long so I won't. I'll tell you what I ended up with and then what those various components contained. This is what I ended up with.
+
+<div className="flex justify-center">
+<img src="/blog/agean_pipeline.png" alt="image of project theses"  />
+</div>
+
+#### Event Pipeline(Now Nexus) - Side Story But Relevant to Agean
+Over the course of this I met someone who introduced me to this open-source tool called Event Pipeline(now Nexus[^2]). I realised after reading through the docs that I could use it for Agean because it would make building the various blocks of the entire pipeline isolated and easily testable. That is in terms of finding out if optimizations that I did as can be seen in the pipeline diagram above actually made any real improvements in terms of speed most importantly. The Batching feature that Nexus has I thought would also help me when it comes to bulk testing
+
+Nexus has a DSL(Domain Specific Language) called pointy-lang that allows users to "script" the order in which "events"(anything you want to happen) should be triggered. For instance, if I created two events say *Fetch* and *Decode*,I could use pointy-lang to write the following(this is not an exhaustive list): 
+
+- *Fetch* -> *Decode* : In this case the fetch Event executes followed by the decode event
+- *Fetch* |-> *Decode* : In this case the fetch Event executes followed by the decode event and the results of the fetch event are piped to the decode event.
+- *Fetch* || *Decode* : In this case fetch and Decode would happen at the same time(in parallel).
+
+
+Nexus also exposes a *monitor_events()* api[^3] that allows users to monitor telemetry about the various events in the pipeline that they had built. 
+
+
+Seeing all these goodies, It should make sense why I decided to use it because it made plugging certain portions of the pipeline that I've shown you at the top very easy. Testing was also easy because all I had to do was call the *monitor_events()* API. I think I'll talk more about how I went about evaluation in my last post about Agean. I'll also do another one talking about my contribution to Nexus and what I'm currently working on right now with regards to that.  In the image that I've shown before(I don't want you to have to scroll up to see it so I've brought it here again), each block that can be seen here is a single component built using the Nexus library. And together they make up what I end up calling the Agean Engine. Cool right? I hope so.:) 
+
+<div className="flex justify-center">
+<img src="/blog/agean_pipeline.png" alt="image of project theses"  />
+</div>
+
+
+### More Context
+Half way into writing this I decided this blog would just be for setting up all of the context and higher level decisions that went into build Agean and so far I am missing a few things so I'm going to add them here.
+
+
+I decided to only focus on the Python programming language(specifically tutorials that are use the Python programming language). In essence, following from the advise I got from my supervisor it is good when solving a really large problem to solve it for a very small isolated version of the problem and then build up from there. I chose Python for that reason and also for that fact that it is an indentation based language. Therefore if I am able to solve this problem for tutorials that use Python, it would be easy to move this to something like Javascript that uses brackets. 
+
+
+I also decided to build a web browser extension that uses the Agean Engine[^4]. The Engine is served Youtube videos from the browser via a FastAPI HTTP Server.
+
+
+In order to test the effectiveness of the tool properly, I curated a specialised means of categorising Youtube tutorials according to the level of complexity of navigation techniques employed in the video and I'll talk more about that when I talk about how I evaluated the Agean's effectiveness.
+
+
+### Foreshadowing
+In the end the got the award for the best research project for my class and I'm really happy about that. 
+<div className="flex justify-center">
+<img src="/blog/congratulatory_email.png" alt="image of project theses"  />
+</div>
+
+
+## NB: This series will be(is)[^4] continued in the next post. I feel like a youtuber :} 
+
+
+
+[^1]:  I discovered this first when I was younger and took so many pictures of myself. Moving through the pictures really quickly actually created some kind of a video. 
+
+[^2]:  https://github.com/nshaibu/nexus
+[^3]:  This is was my first contribution to Nexus as it wasn't fully built and had a few bugs when I had a need for it. 
+[^3]:  Depending on when you read it 
+[^4]:  Mainly because I've always wanted to build a browser extension since my friend kept enticing me with all the extensions he had built(if you read this you know who you are lol)
+
