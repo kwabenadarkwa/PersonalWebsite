@@ -21,13 +21,13 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="relative z-40 flex flex-row gap-4 pt-8 pb-20 font-main text-white">
+    <nav className="relative z-40 flex flex-row gap-2 sm:gap-4 pt-8 pb-20 font-main text-sm sm:text-base text-white">
       {navItems.map((item) => (
         <Link
           key={item.name}
           href={item.path}
           className={`cursor-pointer hover:text-[#22C55E] transition-colors ${isActive(item.path)
-              ? 'w-auto px-1.5 border border-[#525252] rounded-md bg-[#404040] text-[#22C55E]'
+              ? 'w-auto px-1.5 sm:px-2 border border-[#525252] rounded-md bg-[#404040] text-[#22C55E]'
               : ''
             }`}
         >
