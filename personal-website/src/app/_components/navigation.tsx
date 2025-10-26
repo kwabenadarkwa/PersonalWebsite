@@ -10,7 +10,6 @@ export default function Navigation() {
     { name: 'Home', path: '/', image: '/home.svg' },
     { name: 'Projects', path: '/projects', image: '/project.svg' },
     { name: 'Thoughts', path: '/blog', image: '/blog.svg' },
-    { name: 'About', path: '/about', image: '/about.svg' },
   ];
 
   const isActive = (path: string) => {
