@@ -1,6 +1,6 @@
 ---
 title: "Agean (Masters Thesis): Part 1"
-tags: ["nexus", "ai","machine-learning"]
+tags: ["volnux", "ai","machine-learning"]
 date: "Wednesday, 22nd October 2025"
 published: true
 ---
@@ -48,17 +48,17 @@ Anyway, it took a lot of iterations to get to the point where the pipeline for s
 <img src="/blog/agean_pipeline.png" alt="image of project theses"  />
 </div>
 
-#### Event Pipeline(Now Nexus) - Side Story But Relevant to Agean
-Over the course of this I met someone who introduced me to this open-source tool called Event Pipeline(now Nexus[^2]). I realised after reading through the docs that I could use it for Agean because it would make building the various blocks of the entire pipeline isolated and easily testable. That is in terms of finding out if optimizations that I did as can be seen in the pipeline diagram above actually made any real improvements in terms of speed most importantly. The Batching feature that Nexus has I thought would also help me when it comes to bulk testing
+#### Event Pipeline(Now Volnux) - Side Story But Relevant to Agean
+Over the course of this I met someone who introduced me to this open-source tool called Event Pipeline(now Volnux[^2]). I realised after reading through the docs that I could use it for Agean because it would make building the various blocks of the entire pipeline isolated and easily testable. That is in terms of finding out if optimizations that I did as can be seen in the pipeline diagram above actually made any real improvements in terms of speed most importantly. The Batching feature that Nexus has I thought would also help me when it comes to bulk testing
 
-Nexus has a DSL(Domain Specific Language) called pointy-lang that allows users to "script" the order in which "events"(anything you want to happen) should be triggered. For instance, if I created two events say *Fetch* and *Decode*,I could use pointy-lang to write the following(this is not an exhaustive list): 
+Volnux has a DSL(Domain Specific Language) called pointy-lang that allows users to "script" the order in which "events"(anything you want to happen) should be triggered. For instance, if I created two events say *Fetch* and *Decode*,I could use pointy-lang to write the following(this is not an exhaustive list): 
 
 - *Fetch* -> *Decode* : In this case the fetch Event executes followed by the decode event
 - *Fetch* |-> *Decode* : In this case the fetch Event executes followed by the decode event and the results of the fetch event are piped to the decode event.
 - *Fetch* || *Decode* : In this case fetch and Decode would happen at the same time(in parallel).
 
 
-Nexus also exposes a *monitor_events()* api[^3] that allows users to monitor telemetry about the various events in the pipeline that they had built. 
+Volnux also exposes a *monitor_events()* api[^3] that allows users to monitor telemetry about the various events in the pipeline that they had built. 
 
 
 Seeing all these goodies, It should make sense why I decided to use it because it made plugging certain portions of the pipeline that I've shown you at the top very easy. Testing was also easy because all I had to do was call the *monitor_events()* API. I think I'll talk more about how I went about evaluation in my last post about Agean. I'll also do another one talking about my contribution to Nexus and what I'm currently working on right now with regards to that.  In the image that I've shown before(I don't want you to have to scroll up to see it so I've brought it here again), each block that can be seen here is a single component built using the Nexus library. And together they make up what I end up calling the Agean Engine. Cool right? I hope so.:) 
@@ -96,8 +96,8 @@ In the end I got the award for the best research project for my class and I'm re
 
 [^1]:  I discovered this first when I was younger and took so many pictures of myself. Moving through the pictures really quickly actually created some kind of a video. 
 
-[^2]:  https://github.com/nshaibu/nexus
-[^3]:  This is was my first contribution to Nexus as it wasn't fully built and had a few bugs when I had a need for it. 
+[^2]:  https://github.com/nshaibu/volnux
+[^3]:  This is was my first contribution to Volnux as it wasn't fully built and had a few bugs when I had a need for it. 
 [^4]:  Depending on when you read it 
 [^5]:  Mainly because I've always wanted to build a browser extension since my friend kept enticing me with all the extensions he had built(if you read this you know who you are lol)
 

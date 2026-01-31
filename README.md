@@ -10,6 +10,7 @@ Personal website for me and my girlfriend
 - [x] add italic font
 - [x] edit the UI of the components
 - [x] add comments feature to the blog section using [giscus](https://giscus.app/)
-- [ ] Edit the css of the home page and the entire website, specifically responsiveness
-- [ ] Add my projects in the json file created for projects
-- [ ] Create logo for me
+- [x] Edit the css of the home page and the entire website, specifically responsiveness
+- [x] Add my projects in the json file created for projects
+- [x] Create logo for me
+- [ ] add a section that links to my resume
